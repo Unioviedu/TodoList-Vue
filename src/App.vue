@@ -22,6 +22,10 @@
 .view {
   height: calc(100vh * 0.95);
   max-height: calc(100vh * 0.95);
+  overflow-y: hidden;
 }
 
+body {
+  overflow-y: hidden;
+}
 </style>
