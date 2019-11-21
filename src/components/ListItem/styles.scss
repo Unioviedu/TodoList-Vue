@@ -1,0 +1,27 @@
+.icons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.icon {
+  transform: scale(0.6);
+}
+
+.deleteIcon {
+  color: #e53935 !important;
+}
+
+.editIcon {
+  color: #5DBCD2 !important;
+}
+
+.item {
+  display: flex;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+}

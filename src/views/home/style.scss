@@ -10,7 +10,8 @@
 
     .body {
         flex: 0.85;
-        overflow: scroll;
+        flex-direction: row;
+        overflow: hidden;
     }
 
     .footer {

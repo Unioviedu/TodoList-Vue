@@ -1,4 +1,16 @@
 <div class="view task">
-    <h1>Task works</h1>
-    <button @click="anadirTarea(this)">Añadir</button>
+    <h2>{{pageTitle}}</h2>
+    <div class="form-fields">
+        <form>
+            <label>Título</label>
+            <p>
+                <input @input="showTitle()" id="title" type="text" v-model="title">
+            </p>
+            <label>Descripción</label>
+            <p>
+                <input id="description" type="text" v-model="description">
+            </p>
+        </form>
+    </div>
+    <button class="my-button" @click="anadirTarea(this)">{{buttonText}}</button>
 </div>

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/home'
+import Task from '../views/task'
 
 Vue.use(VueRouter)
 
@@ -13,12 +14,14 @@ const routes = [
   {
     path: '/task',
     name: 'task',
-    component: () => import('../views/task')
+    params: true,
+    component: Task
   }
 ]
 
 const router = new VueRouter({
   mode: 'history',
+  // eslint-disable-next-line no-undef
   base: process.env.BASE_URL,
   routes
 })
