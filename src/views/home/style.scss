@@ -1,0 +1,19 @@
+.home {
+    display: flex;
+    flex-direction: column;
+
+    .header {
+        flex: 0.05;
+        padding: 2%;
+        overflow: hidden;
+    }
+
+    .body {
+        flex: 0.85;
+        overflow: scroll;
+    }
+
+    .footer {
+        flex: 0.1;
+    }
+}

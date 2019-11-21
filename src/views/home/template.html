@@ -1,7 +1,10 @@
-<div class="home">
-    <h1>Tareas</h1>
+<div class="view home">
+    <md-content class="header">
+            <span class="md-display-1">Tarea</span>
+    </md-content>
 
-    <md-content>
+
+    <md-content class="body">
         <md-list class="md-triple-line">
             <md-list-item class="md-layout">
                 <md-icon class="md-layout-item fa fa-shield"></md-icon>
@@ -23,12 +26,13 @@
         </md-list>
     </md-content>
 
-    <div class="md-layout">
-        <div class="md-layout-item"></div>
-        <div class="md-layout-item"></div>
-        <div class="md-layout-item">
-            <md-button class="md-primary md-raised" @click="anadirTarea(this)">Añadir Tarea</md-button>
+    <md-content  class="footer">
+        <div class="md-layout">
+            <div class="md-layout-item"></div>
+            <div class="md-layout-item"></div>
+            <div class="md-layout-item">
+                <md-button class="md-primary md-raised" @click="anadirTarea(this)">Añadir Tarea</md-button>
+            </div>
         </div>
-    </div>
-
+    </md-content >
 </div>
