@@ -15,15 +15,32 @@ export default new Vuex.Store({
     addTask (state, { task }) {
       state.tasks.push(task)
       state.nextId++
+    },
+    editTask (state, { task, index }) {
+      state.tasks[index] = task
+    },
+    deleteTask (state, { index }) {
+      state.tasks.slice(index)
     }
   },
   actions: {
     loadTasks ({ commit }, { tasks }) {
       commit('setTasks', { tasks })
     },
+
     addTask ({ commit, state }, { task }) {
       task.id = state.nextId
       commit('addTask', { task })
+    },
+
+    editTask ({ commit, state }, { task }) {
+      let index = state.tasks.findIndex(oldTask => oldTask.id === task.id)
+      commit('editTask', { task, index })
+    },
+
+    deleteTask ({ commit, state }, { task }) {
+      let index = state.tasks.findIndex(oldTask => oldTask.id === task.id)
+      commit('deleteTask', { index })
     }
   },
   getters: {

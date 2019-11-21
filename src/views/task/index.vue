@@ -31,23 +31,24 @@ export default {
   },
   methods: {
     anadirTarea: function (_this) {
-      if (!this.creatingTask) {
-        this.$router.push('/')
-      } else {
-        let task = {
-          title: this.title,
-          description: this.description
-        }
-
-        this.addTask({ task })
-        this.$router.push('/')
+      let task = {
+        title: this.title,
+        description: this.description
       }
+
+      if (!this.creatingTask) {
+        this.editTask({ task })
+      } else {
+        this.addTask({ task })
+      }
+
+      this.$router.push('/')
     },
     showTitle () {
       console.log(this.title)
     },
     ...mapActions([
-      'addTask'
+      'addTask', 'editTask'
     ])
   }
 }
