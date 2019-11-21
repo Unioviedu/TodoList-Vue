@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <nav>
-      VUE TODO
-    </nav>
+    <md-toolbar>
+      <h3 class="md-title">VUE TODO</h3>
+    </md-toolbar>
     <router-view/>
   </div>
 </template>
