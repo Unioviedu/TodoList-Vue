@@ -39,14 +39,17 @@ export default {
   },
 
   computed: {
-    ...mapGetters({
+    ...mapGetters('tasks', {
       tasks: 'getTasks'
     })
   },
 
   created () {
     if (this.tasks.length === 0) {
-      this.loadData({ tasks: initialData })
+      console.log('Poniendo mascara')
+      this.loadData({ tasks: initialData }).then(result => {
+        console.log('Quitando mascara')
+      })
     }
   },
 
@@ -62,7 +65,7 @@ export default {
     anadirTarea (_this) {
       this.$router.push('/task')
     },
-    ...mapActions({
+    ...mapActions('tasks', {
       loadData: 'loadTasks'
     })
   }

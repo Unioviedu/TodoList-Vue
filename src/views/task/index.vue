@@ -11,18 +11,19 @@ export default {
       buttonText: 'Añadir',
       description: '',
       creatingTask: true,
-      title: ''
+      title: '',
+      id: null
     }
   },
   beforeMount () {
-    let id = this.$route.query.id
-    console.log('Vamos a editar la tarea con id: ', id)
-    if (id) {
+    this.id = this.$route.query.id
+    console.log('Vamos a editar la tarea con id: ', this.id)
+    if (this.id) {
       this.pageTitle = 'Editar tarea'
       this.buttonText = 'Guardar'
       this.creatingTask = false
 
-      let { title, description } = this.$store.getters.getTask(id)
+      let { title, description } = this.$store.getters['tasks/getTask'](this.id)
       this.title = title
       this.description = description
     }
@@ -33,7 +34,8 @@ export default {
     anadirTarea: function (_this) {
       let task = {
         title: this.title,
-        description: this.description
+        description: this.description,
+        id: this.id
       }
 
       if (!this.creatingTask) {
@@ -47,7 +49,7 @@ export default {
     showTitle () {
       console.log(this.title)
     },
-    ...mapActions([
+    ...mapActions('tasks', [
       'addTask', 'editTask'
     ])
   }
