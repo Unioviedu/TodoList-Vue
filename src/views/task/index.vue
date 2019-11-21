@@ -1,5 +1,7 @@
 <template src="./template.html"></template>
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'task',
 
@@ -13,11 +15,16 @@ export default {
     }
   },
   beforeMount () {
-    console.log('Vamos a editar la tarea con id: ', this.$route.query.id)
-    if (this.$route.query.id) {
+    let id = this.$route.query.id
+    console.log('Vamos a editar la tarea con id: ', id)
+    if (id) {
       this.pageTitle = 'Editar tarea'
       this.buttonText = 'Guardar'
       this.creatingTask = false
+
+      let { title, description } = this.$store.getters.getTask(id)
+      this.title = title
+      this.description = description
     }
   },
   components: {
@@ -27,21 +34,21 @@ export default {
       if (!this.creatingTask) {
         this.$router.push('/')
       } else {
-        this.$router.push({
-          name: 'home',
-          query: {
-            task: {
-              title: this.title,
-              description: this.description,
-              id: Math.floor(Math.random() * 1000) + 1
-            }
-          }
-        })
+        let task = {
+          title: this.title,
+          description: this.description
+        }
+
+        this.addTask({ task })
+        this.$router.push('/')
       }
     },
     showTitle () {
       console.log(this.title)
-    }
+    },
+    ...mapActions([
+      'addTask'
+    ])
   }
 }
 </script>
