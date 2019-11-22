@@ -22,6 +22,9 @@ export default {
   methods: {
     editTask: function () {
       this.$router.push({ name: 'task', query: { id: this.id } })
+    },
+    deleteTask: function () {
+      this.$emit('deleteTask', { id: this.id })
     }
   }
 }

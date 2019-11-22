@@ -41,6 +41,13 @@ export default {
   methods: {
     anadirTarea (_this) {
       this.$router.push('/task')
+    },
+    deleteTask (event) {
+      for (let i = 0; i < this.tasks.length; i++) {
+        if (this.tasks[i].id === event.id) {
+          this.tasks.splice(i, 1)
+        }
+      }
     }
   }
 }

@@ -4,10 +4,11 @@
     </md-content>
 
 
-    <md-content class="body">
-        <md-list class="md-triple-line" v-for="task in tasks">
-            <ListItem :title="task.title" :description="task.description" :id="task.id"></ListItem>
+    <md-content class="body" v-on:>
+        <md-list v-if="tasks.length > 0" class="md-triple-line" v-for="task in tasks">
+            <ListItem :title="task.title" :description="task.description" :id="task.id" @deleteTask="deleteTask($event)"></ListItem>
         </md-list>
+        <h2 v-if="tasks.length <= 0">No hay tareas asignadas</h2>
     </md-content>
 
     <md-content  class="footer">
