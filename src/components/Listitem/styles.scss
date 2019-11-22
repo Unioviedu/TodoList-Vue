@@ -1,0 +1,46 @@
+.content {
+  display: flex;
+  margin: auto;
+  border-style: solid;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.icon {
+  transform: scale(0.6);
+}
+
+.deleteIcon {
+  color: #e53935 !important;
+}
+
+.description {
+  margin-left: 20px;
+}
+
+.check {
+  margin-top: 37px;
+  margin-right: 10px;
+}
+
+.editIcon {
+  color: #5DBCD2 !important;
+}
+
+.item {
+  display: flex;
+}
+
+.completedTask {
+  background-color: green;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+}
