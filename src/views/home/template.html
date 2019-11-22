@@ -5,8 +5,8 @@
 
 
     <md-content class="body">
-        <md-list>
-          <ListItem title="Tarea1" description="Esta es una tarea de prueba para la demostración de VueJS"></ListItem>
+        <md-list v-for="task in tasks">
+          <ListItem :title="task.title" :description="task.description"></ListItem>
         </md-list>
     </md-content>
 
