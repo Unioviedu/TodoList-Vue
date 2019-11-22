@@ -1,4 +1,4 @@
-<div style="display: flex; margin: auto;border-style: solid">
+<div class="content">
     <div v-bind:class="{ completedTask: done}">
         <h2>{{title}} <md-checkbox  @change="showDone()" v-model="done"></md-checkbox> </h2>
         <span class="description">{{description}}</span>
