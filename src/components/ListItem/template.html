@@ -1,7 +1,7 @@
-<div style="display: flex; margin: auto">
-    <div>
-        <h2>{{title}}</h2>
-        <span>{{description}}</span>
+<div style="display: flex; margin: auto;border-style: solid">
+    <div v-bind:class="{ completedTask: done}">
+        <h2>{{title}} <md-checkbox  @change="showDone()" v-model="done"></md-checkbox> </h2>
+        <span class="description">{{description}}</span>
     </div>
 
     <div class="icons">
@@ -9,7 +9,7 @@
             <md-icon class="icon editIcon">edit</md-icon>
         </md-button>
         <md-button @click="deleteTask()" class="md-icon-button">
-            <md-icon class="icon deleteIcon">delete</md-icon>
+            <md-icon style="margin-left: 10px" class="icon deleteIcon">delete</md-icon>
         </md-button>
     </div>
 </div>

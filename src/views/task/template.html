@@ -2,15 +2,15 @@
     <h2>{{pageTitle}}</h2>
     <div class="form-fields">
         <form>
-            <label>Título</label>
-            <p>
-                <input @input="showTitle()" id="title" type="text" v-model="title">
-            </p>
-            <label>Descripción</label>
-            <p>
-                <input id="description" type="text" v-model="description">
-            </p>
+            <md-field>
+                <label>Título</label>
+                <md-input v-model="title"></md-input>
+            </md-field>
+            <md-field>
+                <label>Descripción</label>
+                <md-input v-model="description"></md-input>
+            </md-field>
         </form>
     </div>
-    <button class="my-button" @click="anadirTarea(this)">{{buttonText}}</button>
+    <md-button class="my-button" @click="anadirTarea(this)">{{buttonText}}</md-button>
 </div>

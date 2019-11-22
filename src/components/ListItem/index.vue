@@ -25,6 +25,9 @@ export default {
     },
     deleteTask: function () {
       this.$emit('deleteTask', { id: this.id })
+    },
+    showDone () {
+      console.log(this.done)
     }
   }
 }
