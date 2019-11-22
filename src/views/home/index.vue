@@ -45,6 +45,13 @@
     methods: {
       anadirTarea (_this) {
         this.$router.push('/task')
+      },
+      deleteTask (id) {
+        for( let i = 0; i < this.tasks.length; i++){
+          if ( this.tasks[i].id === id) {
+            this.tasks.splice(i, 1);
+          }
+        }
       }
     }
   }

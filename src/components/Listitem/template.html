@@ -1,6 +1,7 @@
 <div class="content">
-    <div>
-        <h2>{{title}}</h2>
+    <div v-bind:class="{completedTask: taskDone}">
+        <h2>{{title}}     <md-checkbox v-model="taskDone"></md-checkbox>
+        </h2>
         <span class="description">{{description}}</span>
     </div>
 
@@ -10,7 +11,7 @@
             <md-button class="md-icon-button" @click="editTask()">
                 <md-icon class="icon editIcon">edit</md-icon>
             </md-button>
-            <md-button class="md-icon-button">
+            <md-button class="md-icon-button" @click="deleteTask()">
                 <md-icon style="margin-left: 10px" class="icon deleteIcon">delete</md-icon>
             </md-button>
         </div>
