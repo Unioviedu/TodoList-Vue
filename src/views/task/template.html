@@ -1,14 +1,16 @@
 <div class="view task">
-    <h2>Añadir Tarea</h2>
+    <h2>{{titleText}}</h2>
     <div class="form-fields">
         <form>
             <md-field>
                 <label>Título</label>
-                <md-input ></md-input>
+                <md-input v-model="title"></md-input>
             </md-field>
             <md-field>
-
+                <label>Descripción</label>
+                <md-input v-model="description"></md-input>
             </md-field>
         </form>
     </div>
+    <md-button class="my-button">{{buttonText}}</md-button>
 </div>

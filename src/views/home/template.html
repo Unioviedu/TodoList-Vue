@@ -6,7 +6,7 @@
 
     <md-content class="body">
         <md-list v-for="task in tasks">
-          <ListItem :title="task.title" :description="task.description"></ListItem>
+          <ListItem :title="task.title" :description="task.description" :id="task.id"></ListItem>
         </md-list>
     </md-content>
 

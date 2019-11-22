@@ -9,6 +9,12 @@
       ListItem
     },
 
+    mounted() {
+      if(this.$route.query.task){
+        this.tasks.push(this.$route.query.task)
+      }
+    },
+
     data () {
       return {
         tasks: [

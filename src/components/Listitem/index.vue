@@ -12,6 +12,12 @@
         default: false
       },
       id: Number
+    },
+
+    methods: {
+      editTask() {
+        this.$router.push({name: 'task', query: {id: this.id}})
+      }
     }
   }
 </script>
